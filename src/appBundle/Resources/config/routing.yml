@@ -1,0 +1,7 @@
+app_homepage:
+    path:     /
+    defaults: { _controller: appBundle:Default:index }
+
+app_hello:
+    path:     /hello/{name}
+    defaults: { _controller: appBundle:Default:hello }
