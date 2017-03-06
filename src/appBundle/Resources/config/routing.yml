@@ -5,3 +5,7 @@ app_homepage:
 app_hello:
     path:     /hello/{name}
     defaults: { _controller: appBundle:Default:hello }
+
+app_bookmark:
+    path:     /bookmark
+    defaults: { _controller: appBundle:Bookmark:index }
