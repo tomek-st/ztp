@@ -3,7 +3,8 @@
 namespace appBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Bundle\FrameworkExtraBundle\Configuration\Routing;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use appBundle\Repository\BookmarkRepository;
 
 class BookmarkController extends Controller
 {
@@ -13,7 +14,14 @@ class BookmarkController extends Controller
         $bookmarkRepository = new BookmarkRepository();
         $bookmarks = $bookmarkRepository->findAll();
         
-        return $this->render('appBundle:bookmark:index.html.twig');
+        return $this->render('appBundle:bookmark:index.html.twig',['bookmarks' => $bookmarks]);
+    }
+    public function detalAction($id)
+    {
+        $bookmarkRepository = new BookmarkRepository();
+        $bookmark = $bookmarkRepository->findOneById($id);
+        
+        return $this->render('appBundle:bookmark:detal.html.twig',['bookmark' => $bookmark]);
     }
 }
 ?>

@@ -2,24 +2,18 @@
 
 {% block body %}
 
-    <h1>{{ 'title.bookmarks'|trans }}</h1>
+    <h1>{{ 'title.bookmark'|trans }}</h1>
 
-    {% if bookmarks is defined and bookmarks|length %}
+    {% if bookmark is defined and bookmark|length %}
 
-        {% for bookmark in bookmarks %}
             <dl>
-                <dt>{{ 'label.id'|trans }}</dt>
-                <dd>{{ loop.index0 }}</dd>
                 <dt>{{ 'label.url'|trans }}</dt>
                 <dd>{{ bookmark.url }}</dd>
                 <dt>{{ 'label.tags'|trans }}</dt>
                 {% for tag in bookmark.tags %}
-                    <dd>{{ tag|separator }}</dd>
+                    <dd>{{ tag }}</dd>
                 {% endfor %}
-                <a href="./bookmark/{{loop.index0}}">{{ 'link.more'|trans }}</a>
             </dl>
-        {% endfor %}
-
     {% else %}
     <p>
         {{ 'message.empty_list'|trans }}

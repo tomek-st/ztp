@@ -9,3 +9,7 @@ app_hello:
 app_bookmark:
     path:     /bookmark
     defaults: { _controller: appBundle:Bookmark:index }
+
+app_bookmark2:
+    path:     /bookmark/{id}
+    defaults: { _controller: appBundle:Bookmark:detal }

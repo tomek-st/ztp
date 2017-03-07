@@ -2,12 +2,12 @@
 /**
  * Bookmark repository.
  */
-namespace AppBundle\Repository;
+namespace appBundle\Repository;
 
 /**
  * Class BookmarkRepository.
  *
- * @package AppBundle\Repository
+ * @package appBundle\Repository
  */
 class BookmarkRepository
 {
