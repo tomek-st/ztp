@@ -14,7 +14,11 @@
                 <dd>{{ bookmark.url }}</dd>
                 <dt>{{ 'label.tags'|trans }}</dt>
                 {% for tag in bookmark.tags %}
-                    <dd>{{ tag|separator }}</dd>
+                    {% if bookmark.tags | last == tag %}
+                        <dd>{{ tag }}</dd>
+                    {% else %}  
+                        <dd>{{ tag|separator }}</dd>
+                    {% endif %}
                 {% endfor %}
                 <a href="./bookmark/{{loop.index0}}">{{ 'link.more'|trans }}</a>
             </dl>
